@@ -2,22 +2,10 @@ from django.db import models
 from django.conf import settings
 
 
-class UserModel(models.Model):
-    GENDER_ID = [
-        ('M', 'male'),
-        ('F', 'female'),
-    ]
-    first_name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
-    gender = models.CharField(max_length=1, choices=GENDER_ID, null=True)
-    image = models.ImageField()
-    email = models.EmailField()
-
-
 class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     date_of_birth = models.DateField(blank=True, null=True)
     photo = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
 
     def __str__(self):
-        return f'Profile for user {self.user.username}'
+        return 'Profile for user {}'.format(self.user.username)
