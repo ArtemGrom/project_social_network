@@ -18,14 +18,13 @@ class Contact(models.Model):
     created = models.DateTimeField(auto_now_add=True, db_index=True)
 
     class Meta:
-        ordering = ('-created', )
+        ordering = ('-created',)
 
     def __str__(self):
         return f'{self.user_from} liked {self.user_to}'
 
 
-User.add_to_class('following',
-                  models.ManyToManyField('self',
-                                         through=Contact,
-                                         related_name='followers',
-                                         symmetrical=False))
+User.add_to_class('following', models.ManyToManyField('self',
+                                                      through=Contact,
+                                                      related_name='followers',
+                                                      symmetrical=False))
