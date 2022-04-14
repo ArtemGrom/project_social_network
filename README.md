@@ -7,3 +7,4 @@ Simple social network. Implemented the following functionality.
 - editing data with adding a profile photo; 
 - connection of the notification system;
 - add image to bookmark
+- display image preview on https with ngrok
