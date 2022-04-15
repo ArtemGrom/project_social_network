@@ -6,7 +6,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
 
-from .common.decorators import ajax_required
+from common.decorators import ajax_required
 from .forms import (LoginForm, ProfileEditForm, UserEditForm,
                     UserRegistrationForm)
 from .models import Contact, Profile

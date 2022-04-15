@@ -8,3 +8,4 @@ Simple social network. Implemented the following functionality.
 - connection of the notification system;
 - add image to bookmark
 - display image preview on https with ngrok
+- implement AJAX-query for like images
