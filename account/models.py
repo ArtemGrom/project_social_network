@@ -11,6 +11,12 @@ class Profile(models.Model):
     def __str__(self):
         return 'Profile for user {}'.format(self.user.username)
 
+    @property
+    def get_photo_url(self):
+        if self.photo and hasattr(self.photo, 'url'):
+            return self.photo.url
+        return None
+
 
 class Contact(models.Model):
     user_from = models.ForeignKey('auth.User', related_name='rel_from_set', on_delete=models.CASCADE)
